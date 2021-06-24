@@ -1,6 +1,8 @@
 package com.example.codeclan.CourseBooking.models;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -26,6 +28,21 @@ public class Customer {
     @JsonBackReference
     @OneToMany(mappedBy = "customer")
     private List<Booking> bookings;
+
+//    @JsonIgnoreProperties({"customers"})
+//    @ManyToMany
+//    @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
+//    @JoinTable(
+//            name = "customer_bookings",
+//            joinColumns = {@JoinColumn(
+//                    name = "customer_id",
+//                    nullable = false,
+//                    updatable = false)},
+//            inverseJoinColumns = {@JoinColumn(
+//                    name = "course_id",
+//                    nullable = false,
+//                    updatable = false)}
+//    )
 
     public Customer(String name, String town, int age) {
         this.name = name;
