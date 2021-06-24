@@ -4,16 +4,24 @@ public class Booking {
 
     private Long id;
 
+    @Column(name = "date")
     private String date;
 
+    @ManyToOne
+    @JoinColumn(name = "booking_id", nullable = false)
     private Booking booking;
 
+    @ManyToOne
+    @JoinColumn(name = "customer_id", nullable = false)
     private Customer customer;
 
     public Booking(String date, Booking booking, Customer customer) {
         this.date = date;
         this.booking = booking;
         this.customer = customer;
+    }
+
+    public Booking() {
     }
 
     public String getDate() {
