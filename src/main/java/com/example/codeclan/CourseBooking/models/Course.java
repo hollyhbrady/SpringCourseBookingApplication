@@ -34,6 +34,9 @@ public class Course {
         this.bookings = new ArrayList<>();
     }
 
+    public Course() {
+    }
+
     public List<Booking> getBookings() {
         return bookings;
     }

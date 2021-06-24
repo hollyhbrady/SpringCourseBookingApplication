@@ -21,7 +21,7 @@ public class Booking {
     @JoinColumn(name = "customer_id", nullable = false)
     private Customer customer;
 
-    public Booking(String date, Booking booking, Customer customer) {
+    public Booking(String date, Course course, Customer customer) {
         this.date = date;
         this.booking = booking;
         this.customer = customer;

@@ -21,13 +21,13 @@ public class Customer {
     private String town;
 
     @Column(name = "age")
-    private Integer age;
+    private int age;
 
     @JsonBackReference
     @OneToMany(mappedBy = "customer")
     private List<Booking> bookings;
 
-    public Customer(String name, String town, Integer age) {
+    public Customer(String name, String town, int age) {
         this.name = name;
         this.town = town;
         this.age = age;
