@@ -18,10 +18,11 @@ public class CustomerController {
     public ResponseEntity getAllCustomersAndFilters(
         @RequestParam(required = false, name = "name") String name,
         @RequestParam(required = false, name = "town") String town,
-        @RequestParam(required = false, name = "age") Integer age
+        @RequestParam(required = false, name = "age") Integer age,
+        @RequestParam(required = false, name = "courseName") String courseName
     ) {
-        if (name != null) {
-            return new ResponseEntity(customerRepository.findByBookingsCourseName(name), HttpStatus.OK);
+        if (courseName != null) {
+            return new ResponseEntity(customerRepository.findByBookingsCourseName(courseName), HttpStatus.OK);
         }
         return new ResponseEntity<>(customerRepository.findAll(), HttpStatus.OK);
     }
