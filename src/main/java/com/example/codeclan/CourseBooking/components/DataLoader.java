@@ -35,7 +35,7 @@ public class DataLoader implements ApplicationRunner {
         courseRepository.save(pole);
         Course strip = new Course("Strip-teasing Tessies", "Glasgow", 2);
         courseRepository.save(strip);
-        Course burlesque = new Course("Burlesque Beauties", "Glasgow", 5);
+        Course burlesque = new Course("Burlesque Beauties", "Edinburgh", 5);
         courseRepository.save(burlesque);
 
         Customer colin = new Customer("Colin", "Bellhaven", 35);
