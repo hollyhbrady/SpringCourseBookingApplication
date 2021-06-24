@@ -1,18 +1,27 @@
 package com.example.codeclan.CourseBooking.models;
 
-import java.util.ArrayList;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
+
+@Entity
+@Table(name = "customers")
 public class Customer {
 
     private Long id;
 
+    @Column(name = "name")
     private String name;
 
     private String town;
 
     private Integer age;
 
-    private ArrayList<Booking> bookings;
+    @JsonBackReference
+    @OneToMany(mappedBy = "customer")
+    private List<Booking> bookings;
 
     public Customer(String name, String town, Integer age) {
         this.name = name;
@@ -21,7 +30,7 @@ public class Customer {
         this.bookings = new ArrayList<>();
     }
 
-    public ArrayList<Booking> getBookings() {
+    public List<Booking> getBookings() {
         return bookings;
     }
 
