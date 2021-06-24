@@ -1,5 +1,7 @@
 package com.example.codeclan.CourseBooking.models;
 
+import java.util.ArrayList;
+
 public class Course {
 
     private Long id;
@@ -16,6 +18,7 @@ public class Course {
         this.name = name;
         this.town = town;
         this.rating = rating;
+        this.bookings = new ArrayList<>();
     }
 
     public Long getId() {
