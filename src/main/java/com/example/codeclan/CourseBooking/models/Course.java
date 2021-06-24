@@ -2,6 +2,8 @@ package com.example.codeclan.CourseBooking.models;
 
 import java.util.ArrayList;
 
+@Entity
+@Table(name = "courses")
 public class Course {
 
     private Long id;
