@@ -1,5 +1,7 @@
 package com.example.codeclan.CourseBooking.models;
 
+import java.util.ArrayList;
+
 public class Customer {
 
     private Long id;
@@ -10,10 +12,21 @@ public class Customer {
 
     private Integer age;
 
+    private ArrayList<Booking> bookings;
+
     public Customer(String name, String town, Integer age) {
         this.name = name;
         this.town = town;
         this.age = age;
+        this.bookings = new ArrayList<>();
+    }
+
+    public ArrayList<Booking> getBookings() {
+        return bookings;
+    }
+
+    public void setBookings(ArrayList<Booking> bookings) {
+        this.bookings = bookings;
     }
 
     public Customer() {

@@ -10,6 +10,8 @@ public class Course {
 
     private Integer rating;
 
+    private ArrayList<Booking> bookings;
+
     public Course(String name, String town, Integer rating) {
         this.name = name;
         this.town = town;
