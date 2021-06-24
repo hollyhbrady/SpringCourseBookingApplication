@@ -23,7 +23,7 @@ public class Customer {
     private String town;
 
     @Column(name = "age")
-    private int age;
+    private Integer age;
 
     @JsonBackReference
     @OneToMany(mappedBy = "customer")
@@ -44,7 +44,7 @@ public class Customer {
 //                    updatable = false)}
 //    )
 
-    public Customer(String name, String town, int age) {
+    public Customer(String name, String town, Integer age) {
         this.name = name;
         this.town = town;
         this.age = age;

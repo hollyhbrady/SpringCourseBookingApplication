@@ -60,4 +60,9 @@ public class CourseBookingApplicationTests {
 		assertEquals(1, foundCustomers.size());
 	}
 
+	@Test
+	public void canFindByCourseName() {
+		List<Customer> foundCustomers = customerRepository.findByBookingsCourseName("Drag Queen 101");
+		assertEquals(5, foundCustomers.size());
+	}
 }
