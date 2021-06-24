@@ -35,6 +35,4 @@ public class CustomerController {
         } // http://localhost:8080/customers
         return new ResponseEntity<>(customerRepository.findAll(), HttpStatus.OK);
     }
-
-
 }

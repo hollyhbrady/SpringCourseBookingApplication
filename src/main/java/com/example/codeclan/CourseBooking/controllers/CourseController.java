@@ -19,21 +19,20 @@ public class CourseController {
             @RequestParam(required = false, name = "name") String name,
             @RequestParam(required = false, name = "town") String town,
             @RequestParam(required = false, name = "rating") Integer rating,
-            @RequestParam(required = false, name = "courseName") String customerName
-    ) {
+            @RequestParam(required = false, name = "courseName") String courseName
+    ) { // http://localhost:8080/courses/?name=Drag+Queen+101
         if (name != null) {
             return new ResponseEntity<>(courseRepository.findByName(name), HttpStatus.OK);
-        }
+        } // http://localhost:8080/courses/?town=Glasgow
         if (town != null) {
             return new ResponseEntity<>(courseRepository.findByTown(town), HttpStatus.OK);
-        }
+        } // http://localhost:8080/courses/?rating=5
         if (rating != null) {
             return new ResponseEntity<>(courseRepository.findByRating(rating), HttpStatus.OK);
-        }
-        // http://localhost:8080/customers/?customerName=Colin
-        if (customerName != null) {
-            return new ResponseEntity(courseRepository.findByBookingsCustomerName(customerName), HttpStatus.OK);
-        }
+        } // http://localhost:8080/courses/?courseName=Allen
+        if (courseName != null) {
+            return new ResponseEntity(courseRepository.findByBookingsCustomerName(courseName), HttpStatus.OK);
+        } // http://localhost:8080/courses
         return new ResponseEntity<>(courseRepository.findAll(), HttpStatus.OK);
     }
 }
