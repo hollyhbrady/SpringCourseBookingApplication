@@ -9,12 +9,17 @@ import java.util.List;
 
 public interface CustomerRepository extends JpaRepository<Customer, Long> {
 
-    List<Customer> findByName(String name);
+    List<Customer> findAllByName(String name);
 
-    List<Customer> findByTown(String town);
+    List<Customer> findAllByTown(String town);
 
-    List<Customer> findByAge(Integer age);
+    List<Customer> findAllByAge(Integer age);
 
-    List<Customer> findByBookingsCourseName(String name);
+    List<Customer> findAllByBookingsCourseName(String name);
+
+    List<Customer> findAllByTownAndBookingsCourseId(String town, Long courseId);
+
+    List<Customer> findAllByAgeAndTownAndBookingsCourseId(Integer age, String town, Long courseId);
+
 }
 

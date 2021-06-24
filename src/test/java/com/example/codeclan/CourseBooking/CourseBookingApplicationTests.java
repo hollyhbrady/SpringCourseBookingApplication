@@ -35,7 +35,7 @@ public class CourseBookingApplicationTests {
 
 	@Test
 	public void canFindCustomerByName() {
-		List<Customer> foundCustomer = customerRepository.findByName("Colin");
+		List<Customer> foundCustomer = customerRepository.findAllByName("Colin");
 		assertEquals(1, foundCustomer.size());
 		assertEquals("Colin", foundCustomer.get(0).getName());
 	}
@@ -62,7 +62,7 @@ public class CourseBookingApplicationTests {
 
 	@Test
 	public void canFindByCourseName() {
-		List<Customer> foundCustomers = customerRepository.findByBookingsCourseName("Drag Queen 101");
+		List<Customer> foundCustomers = customerRepository.findAllByBookingsCourseName("Drag Queen 101");
 		assertEquals(5, foundCustomers.size());
 	}
 }
