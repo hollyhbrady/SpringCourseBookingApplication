@@ -30,7 +30,7 @@ public class CourseBookingApplicationTests {
 	BookingRepository bookingRepository;
 	
 	@Test
-	void contextLoads() {
+	public void contextLoads() {
 	}
 
 	@Test
